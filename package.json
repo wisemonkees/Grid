@@ -1,0 +1,16 @@
+{
+  "name": "com.wisemonkees.grid",
+  "version": "1.0.0",
+  "displayName": "Grid",
+  "description": "Wise Monke ES grid package for generic usage.",
+  "unity": "2019.1",
+  "keywords": [
+    "library",
+    "utility"
+  ],
+  "author": {
+    "name": "Wise Monke Entertainment Studio",
+    "email": "wisemonkees@gmail.com",
+    "url": "https://wisemonkees.net"
+  }
+}
