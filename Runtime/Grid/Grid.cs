@@ -11,6 +11,7 @@ namespace WiseMonkeES.Grid
         public float CellSize{ get;private set;}
         private TGridObject[,] gridArray;
         private TextMesh[,] debugTextArray;
+        private bool _showDebug;
         
         // value changed event
         public event EventHandler<OnGridValueChangedEventArgs> OnGridValueChanged;
@@ -25,6 +26,7 @@ namespace WiseMonkeES.Grid
             this.Width = width;
             this.CellSize = cellSize;
             this.originPosition = originPosition;
+            this._showDebug = showDebug;
 
             gridArray = new TGridObject[width, height];
             for (int i = 0; i < width; i++)
@@ -125,7 +127,7 @@ namespace WiseMonkeES.Grid
         
         public void TriggerGridObjectChanged(int x, int y)
         {
-            debugTextArray[x, y].text = gridArray[x, y].ToString();
+            if(_showDebug)debugTextArray[x, y].text = gridArray[x, y].ToString();
             OnGridValueChanged?.Invoke(this, new OnGridValueChangedEventArgs {x = x, y = y});
         }
     }
