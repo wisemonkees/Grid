@@ -95,9 +95,9 @@ namespace WiseMonkeES.Grid
         {
             if (x >= 0 && y >= 0 && x < Width && y < Height)
             {
+                gridArray[x, y] = value;
                 if(_showDebug)
                 {
-                    gridArray[x, y] = value;
                     debugTextArray[x, y].text = gridArray[x, y].ToString();
                 }
                 OnGridValueChanged?.Invoke(this, new OnGridValueChangedEventArgs {x = x, y = y});
