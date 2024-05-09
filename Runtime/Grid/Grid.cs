@@ -83,12 +83,12 @@ namespace WiseMonkeES.Grid
 
         public Vector3 GetWorldPosition(int x, int y)
         {
-            return new Vector3(x, y) * CellSize + originPosition;
+            return new Vector3(x, y) * CellSize + originPosition - new Vector3(Width, Height) * CellSize * .5f;
         }
         public void GetXY(Vector3 worldPosition, out int x, out int y)
         {
-            x = Mathf.FloorToInt((worldPosition-originPosition).x / CellSize);
-            y = Mathf.FloorToInt((worldPosition-originPosition).y / CellSize);
+            x = Mathf.FloorToInt((worldPosition - originPosition).x / CellSize + Width * .5f);
+            y = Mathf.FloorToInt((worldPosition - originPosition).y / CellSize + Height * .5f);
         }
 
         public void SetValue(int x, int y, TGridObject value)
